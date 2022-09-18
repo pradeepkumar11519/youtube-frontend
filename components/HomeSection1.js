@@ -18,7 +18,7 @@ export default function HomeSection1() {
         pt-6 pl-6 border-2 border-black translate-x-6 translate-y-6 sm:translate-x-12 sm:translate-y-12 mx-auto my-auto'>
                             <div className=' 
                             -translate-x-6 -translate-y-6 sm:-translate-x-12 sm:-translate-y-12 mx-auto my-auto sm:pt-12 sm:pl-12'>
-                                <Image layout='responsive' className='' src={home1} placeholder="blue" />
+                                <Image layout='responsive' className='' src={home1} placeholder="blur" />
                             </div>
                         </div>
                     </div>

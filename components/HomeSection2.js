@@ -32,7 +32,7 @@ export default function HomeSection2() {
                     </div>
                     <div className=" w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
                         <div className="object-cover object-center w-full h-full">
-                        <Image className='h-full w-full'  src={home2} alt="stats"/>
+                        <Image placeholder="blur" className='h-full w-full'  src={home2} alt="stats"/>
                         </div>
                     </div>
                 </div>
