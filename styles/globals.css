@@ -21,3 +21,36 @@
 #homesection1 #homesection1p{
     font-family: 'Maven Pro', sans-serif;
 }
+
+
+
+.smenu{
+    left:0;
+}
+
+*::-webkit-scrollbar{
+    width: 7px;
+    
+}
+
+
+*::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+*::-webkit-scrollbar-thumb{
+    background-color: darkgrey;
+    border-radius: 40px;
+}
+
+*::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(118, 118, 118);
+}
+
+#joinus{
+    background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url('../public/images/JoinUs.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 6% auto;
+}
+

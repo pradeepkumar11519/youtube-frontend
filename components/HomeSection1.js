@@ -13,7 +13,7 @@ export default function HomeSection1() {
             <div className='lg:grid grid-cols-2  bg-opacity-30 pt-32  pb-10  bg-emerald-200 '>
 
                 <div className=' p-16 -translate-x-6'>
-                    <div className='border-2 border-black  mx-auto my-auto'>
+                    <div className='border-2 border-black translate-x-3 mx-auto my-auto'>
                         <div className='sm:p-12
         pt-6 pl-6 border-2 border-black translate-x-6 translate-y-6 sm:translate-x-12 sm:translate-y-12 mx-auto my-auto'>
                             <div className=' 
