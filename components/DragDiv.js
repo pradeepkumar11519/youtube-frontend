@@ -20,7 +20,7 @@ export default function DragDiv(props) {
             header.addEventListener("pointermove",onDrag)
             
         })
-        document.addEventListener('pointer',()=>{
+        document.addEventListener('pointerup',()=>{
             header.removeEventListener("pointermove",onDrag)
         })
     },[])
