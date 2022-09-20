@@ -7,7 +7,7 @@ export default function HomeSection1() {
         <div id="homesection1">
             <Head>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
                 <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet" />
             </Head>
             <div className='lg:grid grid-cols-2  bg-opacity-30 pt-32  pb-10  bg-emerald-200 '>

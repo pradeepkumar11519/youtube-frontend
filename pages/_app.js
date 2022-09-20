@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }) {
 						<Component {...pageProps} />
 						
 
-						<Footer/>
+						{/* <Footer/> */}
 					</ContextProvider>
 				</Hydrate>
 				<ReactQueryDevtools initialIsOpen={false}

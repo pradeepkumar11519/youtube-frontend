@@ -16,10 +16,10 @@ export default function OffCanvasNavbar() {
 				className="bg-black absolute overflow-scroll  w-[200px] left-[-200px] z-[10] h-screen transition-all fade-in-out"
 			>
 				<div className="">
-					<div className="m-3 justify-end flex">
+					<div className="m-3 justify-end flex ">
 						<AiFillCloseSquare
 							onClick={openoffcanvas}
-							className="invert bg-opacity-50 w-6 h-6"
+							className="invert bg-opacity-50 cursor-pointer w-6 h-6"
 						/>
 					</div>
 					<div>

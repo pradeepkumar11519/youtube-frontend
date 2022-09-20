@@ -53,4 +53,7 @@
     background-size: cover; */
     margin: 6% auto;
 }
-
+#content{
+    
+    transition:all;
+}
