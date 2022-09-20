@@ -27,8 +27,8 @@ export default function DragDiv(props) {
     return (
         <div>
             <div id={props.wrapper} className='absolute  cursor-pointer flex'>
-                <div id={props.header} className={` bg-rose-500 p-3 hover:opacity-100 opacity-30 transition-all fade-in-out text-white`}><FiMove/></div>
-                <div >
+                <div  className={` hidden bg-rose-500 p-3 hover:opacity-100 opacity-30 transition-all fade-in-out text-white`}><FiMove/></div>
+                <div id={props.header}>
                     {props.children}
                 </div>
             </div>
