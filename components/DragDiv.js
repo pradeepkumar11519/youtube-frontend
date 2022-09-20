@@ -16,12 +16,12 @@ export default function DragDiv(props) {
         }
         let header = document.getElementById(props.header)
         
-        header.addEventListener('mousedown',()=>{
-            header.addEventListener("mousemove",onDrag)
+        header.addEventListener('pointerdown',()=>{
+            header.addEventListener("pointermove",onDrag)
             
         })
-        document.addEventListener('mouseup',()=>{
-            header.removeEventListener("mousemove",onDrag)
+        document.addEventListener('pointer',()=>{
+            header.removeEventListener("pointermove",onDrag)
         })
     },[])
     return (
