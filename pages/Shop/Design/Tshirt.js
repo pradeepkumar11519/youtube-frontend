@@ -13,7 +13,7 @@ import html2canvas from 'html2canvas'
 
 import { ref, uploadBytes, listAll, getDownloadURL ,} from 'firebase/storage'
 import domtoimage from 'dom-to-image'
-import { storage } from '../../config/firebaseConfig';
+import { storage } from '../../../config/firebaseConfig.js';
 import { v4 } from 'uuid'
 import { useEffect } from 'react';
 import { useContext } from 'react';
