@@ -91,11 +91,11 @@ export default function Tshirt() {
 					<div className='grid grid-row-[auto_auto] mx-10'>
 						<div className='grid grid-cols-[auto_auto] w-max '>
 
-							<div className='  w-full my-auto '>
+							<div id="clothDesign" className='  w-full my-auto '>
 								<div  className='border-2 border-green-500 w-fit '>
 									<div className='relative text-center w-fit'>
 
-										<img crossOrigin='true' className='z-[-10] pointer-events-none ' src={`https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/${imagestate.imagecolor}`} />
+										
 										
 
 									</div>
@@ -104,8 +104,8 @@ export default function Tshirt() {
 									</div>
 
 
-									<div  className='absolute top-[340px]  left-[520px]  transition-all fade-in-out  h-[400px] overflow-hidden   w-[320px] inline-block'>
-										<div id="clothDesign" className='border-2 border-dashed overflow-hidden border-gray-100/0 hover:border-gray-100/100 h-full'>
+									<div  className={`bg-[url(${'/images/' + imagestate.imagecolor + '-removebg-preview.png'})] w-[500px] h-[500px] bg-center bg-cover bg-no-repeat`}>
+										<div  className='border-2 border-dashed overflow-hidden border-gray-100/0 hover:border-gray-100/100 h-full'>
 											<div className='text-center mb-20 z-[10]'>
 												<DragDiv header="UT" wrapper="ut">
 													<div id="UT">
