@@ -23,7 +23,7 @@ export default function Navbar() {
 			<Head>
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-				<link href="https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Russo+One&display=swap" rel="stylesheet" />
+				<link href="https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Russo+One&display=swap" rel="stylesheet" crossorigin/>
 			</Head>
 			<div className='bg-teal-600 text-white text-center py-1'>Website Made By Pradeep</div>
 			<div className='hidden md:grid grid-cols-[auto_303px_auto]  py-8'>
