@@ -79,7 +79,7 @@ export default function Shop(props) {
 
 const fetchAllProducts = async (query) =>{
 	
-	return axios.get(`http://127.0.0.1:8000//api/v1/ListAddProduct`).then((response)=>{
+	return axios.get(`https://youtube-backend-youtube-backen.herokuapp.com/api/v1/ListAddProduct`).then((response)=>{
 		return response.data
 	})
 }

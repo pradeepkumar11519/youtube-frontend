@@ -17,7 +17,7 @@ export default function Product_Name(props) {
       setEach_Product(EachProduct.data)
     }
   })
-  const [ImageColor,setImageColor] = useState(EachProduct.data.image_white_front)
+  const [ImageColor,setImageColor] = useState(EachProduct.data.image_white_url)
 
   const [KartElement,setKartElement] = useState({product:EachProduct.data.id,color:"white",quantity:1,size:'S',user:user?.username})
 
@@ -81,54 +81,54 @@ export default function Product_Name(props) {
                 <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                   <div className="flex">
                     <span className="mr-3 my-auto">Color</span>
-                    <button className={`border-2 focus:border-2 ${ImageColor===EachProduct.data.image_white_front || EachProduct.data.image_white_url?"border-black":"border-gray-300"} focus:border-black  rounded-full w-8 h-8 focus:outline-none`} onClick={()=>{
-                      localStorage.setItem('ImageColor',EachProduct.data.image_white_front || EachProduct.data.image_white_url)
-                      setImageColor(EachProduct.data.image_white_url || EachProduct.data.image_white_front)
+                    <button className={`border-2 focus:border-2 ${ImageColor===EachProduct.data.image_white_url?"border-black":"border-gray-300"} focus:border-black  rounded-full w-8 h-8 focus:outline-none`} onClick={()=>{
+                      localStorage.setItem('ImageColor',EachProduct.data.image_white_url)
+                      setImageColor(EachProduct.data.image_white_front)
                       setKartElement({...KartElement,color:"white"})
                     }}></button>
                     <button className="border-2 focus:border-2 focus:border-black border-gray-300 ml-1 bg-gray-700 rounded-full w-8 h-8 focus:outline-none" onClick={()=>{
-                      localStorage.setItem('ImageColor',EachProduct.data.image_black_front || EachProduct.data.image_black_url)
-                      setImageColor(EachProduct.data.image_black_front || EachProduct.data.image_white_url || EachProduct.data.image_black_url)
+                      localStorage.setItem('ImageColor',EachProduct.data.image_black_url)
+                      setImageColor(EachProduct.data.image_black_url)
                       setKartElement({...KartElement,color:"black"})
                     }}></button>
                     <button className="border-2 focus:border-2 focus:border-black border-gray-300 ml-1 bg-indigo-500 rounded-full w-8 h-8 focus:outline-none" onClick={()=>{
-                      localStorage.setItem('ImageColor',EachProduct.data.image_blue_front || EachProduct.data.image_blue_url)
-                      setImageColor(EachProduct.data.image_blue_front || EachProduct.data.image_blue_url)
+                      localStorage.setItem('ImageColor',EachProduct.data.image_blue_url)
+                      setImageColor(EachProduct.data.image_blue_url)
                       setKartElement({...KartElement,color:"blue"})
                     }}></button>
                     <button className="border-2 focus:border-2 focus:border-black border-gray-300 ml-1 bg-rose-500 rounded-full w-8 h-8 focus:outline-none" onClick={()=>{
                       localStorage.setItem('ImageColor',EachProduct.data.image_red_front || EachProduct.data.image_red_url)
-                      setImageColor(EachProduct.data.image_red_front || EachProduct.data.image_red_url)
+                      setImageColor(EachProduct.data.image_red_url)
                       setKartElement({...KartElement,color:"red"})
                     }}></button>
                     <button className="border-2 focus:border-2 focus:border-black border-gray-300 ml-1 bg-green-500 rounded-full w-8 h-8 focus:outline-none" onClick={()=>{
-                      localStorage.setItem('ImageColor',EachProduct.data.image_green_front || EachProduct.data.image_green_url)
-                      setImageColor(EachProduct.data.image_green_front || EachProduct.data.image_green_url)
+                      localStorage.setItem('ImageColor',EachProduct.data.image_green_url)
+                      setImageColor(EachProduct.data.image_green_url)
                       setKartElement({...KartElement,color:"green"})
                     }}></button>
                     <button className="border-2 focus:border-2 focus:border-black border-gray-300 ml-1 bg-indigo-900 rounded-full w-8 h-8 focus:outline-none" onClick={()=>{
-                      localStorage.setItem('ImageColor',EachProduct.data.image_dark_blue_front || EachProduct.data.image_dark_blue_url)
-                      setImageColor(EachProduct.data.image_dark_blue_front || EachProduct.data.image_dark_blue_url)
+                      localStorage.setItem('ImageColor',EachEachProduct.data.image_dark_blue_url)
+                      setImageColor(EachProduct.data.image_dark_blue_url)
                       setKartElement({...KartElement,color:"dark_blue"})
                     }}></button>
                     <button className="border-2 focus:border-2 focus:border-black border-gray-300 ml-1 bg-blue-400 rounded-full w-8 h-8 focus:outline-none" onClick={()=>{
-                      localStorage.setItem('ImageColor',EachProduct.data.image_light_blue_front || EachProduct.data.image_light_blue_url)
-                      setImageColor(EachProduct.data.image_light_blue_front || EachProduct.data.image_light_blue_url)
+                      localStorage.setItem('ImageColor',EachPEachProduct.data.image_light_blue_url)
+                      setImageColor(EachProduct.data.image_light_blue_url)
                       setKartElement({...KartElement,color:"light_blue"})
                     }}></button>
                     <button className="border-2 focus:border-2 focus:border-black border-gray-300 ml-1 bg-yellow-500 rounded-full w-8 h-8 focus:outline-none" onClick={()=>{
-                      localStorage.setItem('ImageColor',EachProduct.data.image_yellow_front || EachProduct.data.image_yellow_url)
-                      setImageColor(EachProduct.data.image_yellow_front || EachProduct.data.image_yellow_url)
+                      localStorage.setItem('ImageColor',EachProduct.data.image_yellow_url)
+                      setImageColor(EachProduct.data.image_yellow_url)
                       setKartElement({...KartElement,color:"yellow"})
                     }}></button>
                     <button className="border-2 focus:border-2 focus:border-black border-gray-300 ml-1 bg-gray-500 rounded-full w-8 h-8 focus:outline-none" onClick={()=>{
-                      localStorage.setItem('ImageColor',EachProduct.data.image_gray_front || EachProduct.data.image_gray_url)
-                      setImageColor(EachProduct.data.image_gray_front || EachProduct.data.image_gray_url)
+                      localStorage.setItem('ImageColor',EachProduct.data.image_gray_url)
+                      setImageColor(EachProduct.data.image_gray_url)
                       setKartElement({...KartElement,color:"gray"})
                     }}></button>
                     <button className="border-2 focus:border-2 focus:border-black border-gray-300 ml-1 bg-red-900 rounded-full w-8 h-8 focus:outline-none" onClick={()=>{
-                      localStorage.setItem('ImageColor',EachProduct.data.image_maroon_front || EachProduct.data.image_maroon_url)
-                      setImageColor(EachProduct.data.image_maroon_front || EachProduct.data.image_maroon_url)
+                      localStorage.setItem('ImageColor',EachProduct.data.image_maroon_url)
+                      setImageColor(EachProduct.data.image_maroon_url)
                       setKartElement({...KartElement,color:"maroon"})
                     }}></button>
                   </div>
@@ -197,7 +197,7 @@ export default function Product_Name(props) {
 
 const fetchEachProduct = async (id) =>{
   
-  return axios.get(`http://127.0.0.1:8000/api/v1/RetrieveUpdateDestroyProduct/${id}/`).then((response)=>{
+  return axios.get(`https://youtube-backend-youtube-backen.herokuapp.com/api/v1/RetrieveUpdateDestroyProduct/${id}/`).then((response)=>{
     return response.data
   })
 }
@@ -219,7 +219,7 @@ export const getServerSideProps = async ({req,res,params}) =>{
 
 export const AddProductToKart = async (KartObject) =>{
   
-  return axios.post('http://127.0.0.1:8000/api/v1/AddElementToKart/',KartObject.details,{
+  return axios.post('https://youtube-backend-youtube-backen.herokuapp.com/api/v1/AddElementToKart/',KartObject.details,{
     headers:{
       Authorization:'Bearer ' + KartObject.token
     }

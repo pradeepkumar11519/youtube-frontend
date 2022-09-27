@@ -72,7 +72,7 @@ export default function SignupForm() {
 
 const CreateUser = (user) => {
 
-	return axios.post('http://127.0.0.1:8000/api/v1/Signup/', user)
+	return axios.post('https://youtube-backend-youtube-backen.herokuapp.com/api/v1/Signup/', user)
 }
 
 

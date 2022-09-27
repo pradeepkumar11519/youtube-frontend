@@ -41,7 +41,7 @@ export default function CheckoutDetails(props) {
 			OrderDetails['razorpay_order_id'] = response.razorpay_order_id
 			OrderDetails['razorpay_payment_id'] = response.razorpay_payment_id
 			OrderDetails['razorpay_payment_signature'] = response.razorpay_signature
-			await axios.post('http://127.0.0.1:8000/api/v1/handlerequest/',OrderDetails,{
+			await axios.post('https://youtube-backend-youtube-backen.herokuapp.com/api/v1/handlerequest/',OrderDetails,{
 				headers:{
 					Authorization:'Bearer ' + props.access
 				}
@@ -155,7 +155,7 @@ export const getServerSideProps = async ({ req, res, params }) => {
 
 const fetchCartAndRazorpay = async (order_details) =>{
 	
-	return axios.post('http://127.0.0.1:8000/api/v1/PlaceOrderThruCart/',order_details.details,{
+	return axios.post('https://youtube-backend-youtube-backen.herokuapp.com/api/v1/PlaceOrderThruCart/',order_details.details,{
 		headers:{
 			Authorization:'Bearer ' + order_details.token
 		}

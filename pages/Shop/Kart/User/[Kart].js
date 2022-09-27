@@ -46,7 +46,7 @@ export default function Kart(props) {
 }
 
 export const fetchKartProducts = async (token) => {
-	return axios.get('http://127.0.0.1:8000/api/v1/GetAllElementsFromKart', {
+	return axios.get('https://youtube-backend-youtube-backen.herokuapp.com/api/v1/GetAllElementsFromKart', {
 		headers: {
 			Authorization: 'Bearer ' + token
 		}

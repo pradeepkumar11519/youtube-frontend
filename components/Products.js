@@ -10,7 +10,7 @@ export default function Products({product}) {
 			
 				<div className="p-4 w-full">
 				<div className="block relative h-full rounded overflow-hidden">
-					<img alt="ecommerce" className="object-cover object-center rounded-md w-full h-full block" src={product.image_red_front || product.image_red_url} />
+					<img alt="ecommerce" className="object-cover object-center rounded-md w-full h-full block" src={ product.image_red_url} />
 				</div>
 				<div className="mt-4">
 					<h3 className=" text-xs tracking-widest title-font mb-1">{product.category}</h3>

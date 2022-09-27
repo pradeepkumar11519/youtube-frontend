@@ -171,7 +171,7 @@ export default function CartItem({ cartproduct, access, id, title }) {
 }
 
 const DeleteProduct = (KartObject) => {
-    return axios.post('http://127.0.0.1:8000/api/v1/DeleteElementFromKart/', KartObject.details, {
+    return axios.post('https://youtube-backend-youtube-backen.herokuapp.com/api/v1/DeleteElementFromKart/', KartObject.details, {
         headers: {
             Authorization: 'Bearer ' + KartObject.token
         }
