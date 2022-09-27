@@ -14,12 +14,12 @@ import Context from '../context/context'
 
 export default function Navbar() {
 	const router = useRouter()
-	console.log(router.pathname);
-	const {openoffcanvas} = useContext(Context)
+	
+	const {openoffcanvas,authtoken,Logout,user} = useContext(Context)
 	
 	return (
 
-		<div id="navbar" className='h-fit z-[10]  w-full m-0 fixed bg-white top-0 left-0 right-0 mb-32'>
+		<div id="navbar" className={` h-fit z-[10]  w-full m-0 fixed bg-white top-0 left-0 right-0 mb-32`}>
 			<Head>
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
@@ -39,16 +39,20 @@ export default function Navbar() {
 					<ul className='hidden md:flex justify-center  my-auto'>
 						<li className='  mx-5 '>
 
-							<Link href="/"><a className={`${router.pathname === "/" ? "text-black" : ""} text-xl hover:border-t-4 transition-all fade-in-out hover:border-teal-500 w-full h-full p-1`}>HOME</a></Link>
+							<Link href="/"><a className={`${router.pathname === "/" ? "text-black" : ""} text-xl hover:border-t-4 transition-all fade-in-out hover:border-teal-500 w-full h-full p-1 hover:text-black`}>HOME</a></Link>
 
 						</li>
 						
-						 <li className='  mx-5  '>
+						 <li className={`  mx-5   `}>
 						 	<div className='' >
 							<Dropdown/>
 							</div>
 						</li>
-						
+						<li className='  mx-5 '>
+
+							<Link href="/"><a className={`${router.pathname === "/YourOrders" ? "text-black" : ""} text-xl hover:border-t-4 transition-all fade-in-out hover:border-teal-500 w-full h-full p-1 hover:text-black`}>YOUR ORDERS</a></Link>
+
+						</li>
 
 					</ul>
 				</div>
@@ -69,15 +73,24 @@ export default function Navbar() {
 				
 				<div className='  my-auto'>
 					<ul className='hidden md:flex justify-center  my-auto'>
+					<li className={`  mx-5  `}>
+							<Link href={`/Shop/Kart/User/${user?.username}`}><a className={` ${router.pathname===`/Shop/Kart/User/` + user?.username} text-xl hover:border-t-4 transition-all fade-in-out hover:border-teal-500 w-full h-full p-1 hover:text-black`}>YOUR CART</a></Link>
+						</li>
+						{authtoken && user?(
+							<li className='  mx-5 '>
+							<Link href="#"><a className={`text-xl hover:border-t-4 transition-all fade-in-out hover:border-teal-500 w-full h-full p-1 hover:text-black`} onClick={()=>{
+								Logout()
+							}}>LOGOUT</a></Link>
+							</li>
+						):(
+							<li className='  mx-5 '>
+							<Link href="/JoinUs"><a className={`${router.pathname === "/JoinUs" ? "text-black" : ""} text-xl hover:border-t-4 transition-all fade-in-out hover:border-teal-500 w-full h-full p-1 hover:text-black`}>JOIN US</a></Link>
+							</li>
+						)}
 						
-						<li className='  mx-5 '>
-							<Link href="/JoinUs"><a className={`${router.pathname === "/JoinUs" ? "text-black" : ""} text-xl hover:border-t-4 transition-all fade-in-out hover:border-teal-500 w-full h-full p-1`}>JOIN US</a></Link>
-						</li>
 						 
-						<li className='  mx-5 '>
-							<Link href="#"><a className='text-xl hover:border-t-4 transition-all fade-in-out hover:border-teal-500 w-full h-full p-1'>LOGOUT</a></Link>
-						</li>
-
+						
+						
 					</ul>
 				</div>
 

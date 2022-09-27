@@ -8,7 +8,7 @@ import c1 from '../public/images/c1.webp'
 
 export default function ShopCarousel() {
     return (
-        <div className='w-[800px] h-fit rounded-md'>
+        <div className='w-[800px] shadow-2xl shadow-black h-fit rounded-md'>
             <Carousel autoPlay interval={2000} className="rounded-md"  infiniteLoop dynamicHeight={true} showThumbs={false}>
                 <div className='rounded-full'>
                     <Image src={c1} placeholder="blur" />

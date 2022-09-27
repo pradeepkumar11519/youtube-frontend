@@ -15,8 +15,9 @@ export default function JoinUs() {
 		document.getElementById('signup-btn').style.color = "white"
 	}
 	return (
-		<div id="joinus" className='h-[900px] sm:h-screen bg-gradient-to-tr from-gray-900 to-gray-600 content-center items-center flex'>
-			<div id="form-box" className='w-[250px] sm:w-[380px] content-center top-10 h-[480px] items-center relative  m-auto  bg-white p-2 overflow-hidden'>
+		<div id="joinus" className='h-[900px]  sm:h-screen bg-gradient-to-tr from-gray-900 to-gray-600 content-center items-center flex'>
+			
+			<div id="form-box" className='w-full mx-20 sm:w-[380px] content-center top-10 sm:h-[480px] h-[600px]  items-center justify-center relative  sm:m-auto  bg-white p-2 overflow-hidden'>
 				<div className='hidden sm:block'>
 				<FormButtonStructure/>
 				</div>

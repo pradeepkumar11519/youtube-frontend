@@ -5,10 +5,10 @@ import { useRouter } from "next/router";
 import Dropdown from "./Dropdown";
 import { useContext } from "react";
 import Context from "../context/context";
-
+import { ToastContainer, toast } from 'react-toastify';
 export default function OffCanvasNavbar() {
 	const router = useRouter();
-	const { openoffcanvas } = useContext(Context);
+	const { openoffcanvas, authtoken, Logout,user } = useContext(Context);
 	return (
 		<div className="transition-all fade-in-out md:hidden  z-[10]">
 			<div
@@ -33,9 +33,8 @@ export default function OffCanvasNavbar() {
 							<li className="   my-5">
 								<Link href="/">
 									<a
-										className={`${
-											router.pathname === "/" ? "text-rose-500" : ""
-										} flex justify-center text-xl transition-all fade-in-out  w-full h-full p-1 text-white`}
+										className={`${router.pathname === "/" ? "text-rose-500" : ""
+											} flex justify-center text-xl transition-all fade-in-out  w-full h-full p-1 text-white`}
 									>
 										HOME
 									</a>
@@ -49,33 +48,47 @@ export default function OffCanvasNavbar() {
 							<hr />
 
 
+							{authtoken && user ? (
+								<>
+									<li className="my-5" onClick={Logout}>
+										<Link href="#">
+											<a className="text-xl flex justify-center transition-all fade-in-out  w-full h-full p-1 text-white">
+												LOGOUT
+											</a>
+										</Link>
+									</li>
+								</>
 
-							<li className="   my-5">
-								<Link href="/JoinUs">
-									<a
-										className={`${
-											router.pathname === "/JoinUs" ? "text-rose-500" : ""
-										} flex justify-center text-xl  transition-all fade-in-out  w-full h-full p-1 text-white`}
-									>
-										JOIN US
-									</a>
-								</Link>
-							</li>
+							) : (
+								<>
+
+									<li className="   my-5">
+										<Link href="/JoinUs">
+											<a
+												className={`${router.pathname === "/JoinUs" ? "text-rose-500" : ""
+													} flex justify-center text-xl  transition-all fade-in-out  w-full h-full p-1 text-white`}
+											>
+												JOIN US
+											</a>
+										</Link>
+									</li>
 
 
+
+
+								</>
+							)}
 
 							<hr />
 							<hr />
 							<hr />
-
 
 
 							<li className="my-5 text-xl ">
 								<Link href="/Videos">
 									<a
-										className={`text-white ${
-											router.pathname === "/Videos" ? "text-rose-500" : ""
-										} flex justify-center`}
+										className={`text-white ${router.pathname === "/Videos" ? "text-rose-500" : ""
+											} flex justify-center`}
 									>
 										VIDEOS
 									</a>
@@ -93,9 +106,8 @@ export default function OffCanvasNavbar() {
 							<li className="my-5 text-xl ">
 								<Link href="/Shop">
 									<a
-										className={`text-white ${
-											router.pathname === "/Shop" ? "text-rose-500" : ""
-										} flex justify-center`}
+										className={`text-white ${router.pathname === "/Shop" ? "text-rose-500" : ""
+											} flex justify-center`}
 									>
 										SHOP
 									</a>
@@ -113,9 +125,8 @@ export default function OffCanvasNavbar() {
 							<li className="my-5 text-xl ">
 								<Link href="/ChatRoom">
 									<a
-										className={`text-white ${
-											router.pathname === "/ChatRoom" ? "text-rose-500" : ""
-										} flex justify-center`}
+										className={`text-white ${router.pathname === "/ChatRoom" ? "text-rose-500" : ""
+											} flex justify-center`}
 									>
 										CHATROOM
 									</a>
@@ -130,13 +141,7 @@ export default function OffCanvasNavbar() {
 
 
 
-							<li className="my-5">
-								<Link href="#">
-									<a className="text-xl flex justify-center transition-all fade-in-out  w-full h-full p-1 text-white">
-										LOGOUT
-									</a>
-								</Link>
-							</li>
+
 
 
 
@@ -148,7 +153,7 @@ export default function OffCanvasNavbar() {
 
 
 
-					
+
 				</div>
 
 

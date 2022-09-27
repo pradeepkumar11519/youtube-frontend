@@ -19,7 +19,7 @@ export default function Dropdown() {
                 document.getElementById('dropdown').classList.remove('active')
             }
             
-            // console.log('current',currentDropDown);
+            
                 
             
 
@@ -36,8 +36,8 @@ export default function Dropdown() {
                 
                     <a data-dropdown-button onClick={()=>{
                         document.getElementById('dropdown').classList.toggle('active')
-                    }} className='cursor-pointer hover:border-t-4 hover:border-teal-500 text-xl transition-all  fade-in-out p-1 link 
-            '>MORE </a>
+                    }} className={`cursor-pointer hover:text-black hover:border-t-4 hover:border-teal-500 text-xl transition-all  fade-in-out p-1 link 
+            `}>MORE </a>
              
               
                 <div id="dropdown-menu"  className="dropdown-menu absolute border-2 border-rose-500 left-0 top-10 bg-black p-5 rounded-md shadow-2xl  transition-all fade-in-out translate-y-[-10px] pointer-events-none flex">

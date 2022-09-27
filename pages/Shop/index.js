@@ -6,56 +6,63 @@ import shop4 from '../../public/images/shop4.png'
 import ShopCarousel from '../../components/ShopCarousel'
 import { useRouter } from 'next/router'
 import DragDiv from '../../components/DragDiv'
+import ShopPage1 from '../../components/ShopPage1'
+import ProductPage from '../../components/ProductPage'
+import { dehydrate, useQuery,QueryClient } from '@tanstack/react-query'
+import axios from 'axios'
+import { useState } from 'react'
+import { useContext } from 'react'
+import Context from '../../context/context'
+import SearchBar from '../../components/SearchBar'
+import Choices from '../../components/Choices'
 
-export default function Shop() {
-	const router = useRouter()
+
+export default function Shop(props) {
+	const {AllProducts,setAllProducts,FilterQuery} = useContext(Context)
+	const Product = useQuery(['AllProducts'],()=>{
+		return fetchAllProducts(FilterQuery)
+	},{
+		refetchOnWindowFocus:false,
+		onSuccess:()=>{
+			setAllProducts(Product.data)
+		},
+		onError:()=>{},
+	})
+	
+	
 	return (
-		<div className='py-48 '>
+		<div className='py-[111px] '>
+			
 			{/* <DragDiv/> */}
-			<div className='grid grid-cols-[300px_auto]'>
-				<div className='flex justify-center h-full bg-white   shadow-[0px_0px_13px_0]'>
-					<ShopNavbar />
-				</div>
+			<div className=' w-full'>
 				
-				<div className=' grid grid-rows-[auto_auto] mx-10'>
+				
+				<div className='grid-rows-[auto_auto] '>
 
 
-					<div className='grid grid-cols-[auto_auto_auto] h-fit    '>
+					<div className='mx-10'>
+						<ShopPage1/>
 
-						<div className=' w-fit '>
-
-							<div className=' w-[400px] h-[400px] my-auto '>
-								<Image layout='responsive' src={shop4}
-									className=""
-									placeholder="blur" />
-							</div>
-						</div>
-						<div className='flex justify-center  max-w-[300px] shadow-[0_0_30px_7px] p-2 shadow-black h-fit items-center my-auto'>
-
-							<div className='mx-auto flex flex-col  items-center   my-auto  '>
-								<h1 className=' justify-center mx-auto text-center font-medium text-3xl h-fit'>WELCOME TO LIGHTENING WEB STORE</h1>
-								<p className='text-center my-3 h-fit'>We Make And Take Orders.Hurray You Can Design Your Styled Cloths And We Are Ready To Deliver It To You</p>
-							</div>
-						</div>
-						<div className=' w-fit '>
-
-							<div className=' w-[400px] h-[400px] my-auto '>
-								<Image layout='responsive' src={shop4}
-									className=""
-									placeholder="blur" />
-							</div>
-						</div>
+						
 					</div>
 
-					<div className='mx-auto my-16 py-16 border-t-4 border-black '>
+					{/* <div className='mx-auto w-full py-16  shadow-[1px_1px_20px_1px] shadown-zinc-900/50  '>
 
-						<div id="carousel" className=' w-fit  items-center flex justify-center'>
+						<div id="carousel" className=' w-fit  items-center flex justify-center mx-auto'>
 							<ShopCarousel />
 						</div>
-					</div>
+					</div> */}
 
-					<div>
-						cloth section
+					<div className='mx-auto w-full py-16  shadow-[1px_1px_20px_1px] shadown-zinc-900/50 '>
+					<h1 className='my-20 text-center font-bold text-3xl'>AVAILABLE PRODUCTS</h1>
+						<div>
+							<SearchBar  />
+						</div>
+						<div>
+							<Choices Product={Product}  />
+						</div>
+						
+						<ProductPage Product={Product}  />
 					</div>
 
 
@@ -66,4 +73,26 @@ export default function Shop() {
 
 		</div>
 	)
+}
+
+
+
+const fetchAllProducts = async (query) =>{
+	
+	return axios.get(`http://127.0.0.1:8000//api/v1/ListAddProduct`).then((response)=>{
+		return response.data
+	})
+}
+
+export const getServerSideProps = async ({req,res,params}) =>{
+	const queryClient = new QueryClient()
+	await queryClient.prefetchQuery(['AllProducts'],()=>{
+		return fetchAllProducts(typeof window!=='undefined'?localStorage.getItem('FilterQuery'):null)
+	})
+	
+	return {
+		props:{
+			dehydratedState:dehydrate(queryClient)
+		}
+	}
 }

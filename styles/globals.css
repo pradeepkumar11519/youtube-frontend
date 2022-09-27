@@ -67,3 +67,24 @@
     height:0px;
 }
 
+.bg-red-500{
+    width:100px;
+    height:100px;
+    background-color:'red'
+}
+
+#file-upload-button{
+    border: 2px solid red !important;
+}
+
+#creditcard input {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s;
+  }

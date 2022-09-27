@@ -12,8 +12,8 @@ import {
 } from '@tanstack/react-query'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-
-
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }) {
 					<ContextProvider>
 
 						<Navbar />
-
+						<ToastContainer/>
 
 						<Component {...pageProps} />
 						
