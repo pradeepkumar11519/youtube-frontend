@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import Cards from 'react-credit-cards';
-import 'react-credit-cards/es/styles-compiled.css';
+
 export default function CreditCard() {
     const [CreditCardState,setCreditCardState] = useState({number:'',name:'',expiry:'',cvc:'',focus:''})
   return (
