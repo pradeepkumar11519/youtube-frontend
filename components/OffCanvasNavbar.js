@@ -119,8 +119,40 @@ export default function OffCanvasNavbar() {
 							<hr />
 							<hr />
 							<hr />
+							<button disbaled={!user} className="my-5 text-xl ">
+								<Link href={`/Shop/YourOrders/${user?.username}/${user?.email}`}>
+									<a
+										className={`text-white ${router.pathname === "/Shop/YourOrders/" + user?.username + '/' + user?.email ? "text-rose-500" : ""
+											} flex justify-center`}
+									>
+										YOUR ORDERS
+									</a>
+								</Link>
+							</button>
 
 
+
+							<hr />
+							<hr />
+							<hr />
+							<button disbaled={!user} className="my-5 text-xl ">
+								<Link href={`/Shop/Kart/User/${user?.username}`}>
+									<a
+										className={`text-white ${router.pathname === "/Shop/Kart/User/" + user?.username? "text-rose-500" : ""
+											} flex justify-center`}
+									>
+										YOUR CART
+									</a>
+								</Link>
+							</button>
+
+
+
+							<hr />
+							<hr />
+							<hr />
+
+											
 
 							<li className="my-5 text-xl ">
 								<Link href="/ChatRoom">

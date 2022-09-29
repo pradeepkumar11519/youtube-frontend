@@ -45,14 +45,20 @@ export const ContextProvider = ({children}) =>{
         Phone_Number:"",
         address:"",
         city:"",
-        state:"",
+        state:"KARNATAKA",
         pincode:"",
-        total_ordered_price:"",
+        product:"",
+        price_of_product:"",
+        quantity:"",
+        color:"",
+        size:"",
+        ordered_image_url:"",
         payment_method:"Razorpay",
         final_amount_with_gst:""
     })
 
     const [RazorPayDetails,setRazorPayDetails] = useState(null)
+    const [ShippingDetails,setShippingDetails] = useState(null)
     const Logout = () =>{
         if(typeof window!=='undefined'){
             localStorage.clear()
@@ -104,6 +110,8 @@ export const ContextProvider = ({children}) =>{
         setRazorPayDetails:setRazorPayDetails,
         IsModal:IsModal,
         setIsModal:setIsModal,
+        ShippingDetails:ShippingDetails,
+        setShippingDetails:setShippingDetails,
     }
     console.log(OrderDetails);
     return (

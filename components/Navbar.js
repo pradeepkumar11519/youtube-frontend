@@ -50,7 +50,7 @@ export default function Navbar() {
 						</li>
 						<li className='  mx-5 '>
 
-							<Link href="/"><a className={`${router.pathname === "/YourOrders" ? "text-black" : ""} text-xl hover:border-t-4 transition-all fade-in-out hover:border-teal-500 w-full h-full p-1 hover:text-black`}>YOUR ORDERS</a></Link>
+							<Link href={`/Shop/YourOrders/${user?.username}/${user?.email}`}><a className={`${router.pathname === "/YourOrders" ? "text-black" : ""} text-xl hover:border-t-4 transition-all fade-in-out hover:border-teal-500 w-full h-full p-1 hover:text-black`}>YOUR ORDERS</a></Link>
 
 						</li>
 

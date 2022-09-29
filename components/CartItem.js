@@ -67,7 +67,7 @@ export default function CartItem({ cartproduct, access, id, title }) {
     };
     return (
         <div>
-            <div className='mb-2' >
+            <div className='mb-5 ' >
                 <Modal
                     style={customStyles}
                     isOpen={IsAddModal}
@@ -92,80 +92,83 @@ export default function CartItem({ cartproduct, access, id, title }) {
                         <button className='mx-2 p-2 bg-black text-white font-medium text-2xl' onClick={onDeleteProduct}>DELETE</button>
                     </div>
                 </Modal>
+                <div className=''>
+                    <div className='grid grid-cols-[200px_500px_auto_200px]'>
 
-                <div className='lg:grid grid-cols-[200px_500px_auto_auto]   '>
-                    <div className='border-2 border-black'>
-                        <div>
-                            <h4 className='text-center border-black text-xl font-bold  border-b-2'>PRODUCT</h4>
+                        <div className='border-2 border-black '>
+                            <div>
+                                <h4 className='text-center border-black text-xl font-bold  border-b-2'>PRODUCT</h4>
+                            </div>
+                            <Link href={`/Shop/product_id/${id}/product_name/${title}`}>
+                                <a>
+                                    <div className='mx-auto flex items-center my-auto'>
+                                        <img className='max-h-[200px] w-[100px] mx-auto my-9' src={cartproduct.product_image || cartproduct.product_url} />
+                                    </div>
+                                </a>
+                            </Link>
                         </div>
-                        <Link href={`/Shop/product_id/${id}/product_name/${title}`}>
-                            <a>
-                                <div className='mx-auto flex items-center my-auto'>
-                                    <img className='max-h-[200px] w-[100px] mx-auto my-9' src={cartproduct.product_image || cartproduct.product_url} />
+                        <div className='border-x-2 border-b-2 border-t-2 lg:border-x-0  border-black !text-center'>
+                            <div>
+                                <h4 className='text-center border-black text-xl font-bold  border-b-2'>PROPERTIES</h4>
+                            </div>
+                            <div className='my-2 mx-2'>
+                                <span className='font-bold text-xl'>PRODUCT NAME : </span ><span className='text-lg
+                             font-bold'>{cartproduct.product_title}</span>
+                            </div>
+                            <div className='my-2 mx-2'>
+                                <span className='font-bold text-xl'>COLOR : </span><span className='text-lg font-bold'>{cartproduct.color}</span>
+                            </div>
+                            <div className='my-2 mx-2'>
+                                <span className='font-bold text-xl'>SIZE : </span><span className='font-bold text-lg'>{cartproduct.size}</span>
+                            </div>
+
+                        </div>
+                        <div className='lg:border-l-2 border-x-2 border-b-2  border-black'>
+                            <div>
+                                <h4 className='text-center  border-black text-xl font-bold break-all border-b-2 border-t-2 lg:border-x-0'>QUANTITY</h4>
+                            </div>
+                            <div className='flex justify-center my-12 items-center'>
+                                <div className='border-2 border-black bg-gray-300'>
+                                    <button className=' p-2 rounded-md' onClick={() => {
+                                        setProductTitle(cartproduct.product_title)
+                                        setProductid(cartproduct.product)
+                                        setProductObject({ ...ProductObject, product: cartproduct.product, product_image: cartproduct.product_image, size: cartproduct.size, color: cartproduct.color })
+                                        setIsDeleteModal(true)
+                                    }}><GrFormSubtract className='w-3 h-3' />
+                                    </button>
+
                                 </div>
-                            </a>
-                        </Link>
-                    </div>
-                    <div className='border-x-2 border-b-2 lg:border-t-2 lg:border-x-0  border-black '>
-                        <div>
-                            <h4 className='text-center border-black text-xl font-bold  border-b-2'>PROPERTIES</h4>
-                        </div>
-                        <div className='my-2 mx-2'>
-                            <span className='font-bold'>PRODUCT NAME : </span>{cartproduct.product_title}
-                        </div>
-                        <div className='my-2 mx-2'>
-                            <span className='font-bold'>COLOR : </span>{cartproduct.color}
-                        </div>
-                        <div className='my-2 mx-2'>
-                            <span className='font-bold'>SIZE : </span>{cartproduct.size}
-                        </div>
+                                <div className='text-xl font-bold border-y-2 border-black w-[30px] text-center'>
+                                    {cartproduct.quantity}
+                                </div>
+                                <div className='border-2 border-black bg-gray-300'>
+                                    <button className=' p-2 rounded-md' onClick={() => {
+                                        setProductTitle(cartproduct.product_title)
+                                        setProductid(cartproduct.product)
+                                        setProductObject({ ...ProductObject, product: cartproduct.product, product_image: cartproduct.product_image, size: cartproduct.size, color: cartproduct.color })
+                                        setIsAddModal(true)
 
-                    </div>
-                    <div className='lg:border-l-2 border-x-2 border-b-2  border-black'>
-                        <div>
-                            <h4 className='text-center  border-black text-xl font-bold break-all border-b-2 lg:border-t-2 lg;border-x-0'>QUANTITY</h4>
-                        </div>
-                        <div className='flex justify-center my-12 items-center'>
-                            <div className='border-2 border-black bg-gray-300'>
-                                <button className=' p-2 rounded-md' onClick={() => {
-                                    setProductTitle(cartproduct.product_title)
-                                    setProductid(cartproduct.product)
-                                    setProductObject({ ...ProductObject, product: cartproduct.product, product_image: cartproduct.product_image, size: cartproduct.size, color: cartproduct.color })
-                                    setIsDeleteModal(true)
-                                }}><GrFormSubtract className='w-3 h-3' />
-                                </button>
+                                    }}>
+                                        <GrAdd className='w-3 h-3' />
+                                    </button>
+
+                                </div>
 
                             </div>
-                            <div className='text-xl font-bold border-y-2 border-black w-[30px] text-center'>
-                                {cartproduct.quantity}
-                            </div>
-                            <div className='border-2 border-black bg-gray-300'>
-                                <button className=' p-2 rounded-md' onClick={() => {
-                                    setProductTitle(cartproduct.product_title)
-                                    setProductid(cartproduct.product)
-                                    setProductObject({ ...ProductObject, product: cartproduct.product, product_image: cartproduct.product_image, size: cartproduct.size, color: cartproduct.color })
-                                    setIsAddModal(true)
-
-                                }}>
-                                    <GrAdd className='w-3 h-3' />
-                                </button>
-
-                            </div>
-
                         </div>
-                    </div>
-                    <div className='border-x-2 lg:border-l-0 border-b-2 border-black'>
-                        <div>
-                            <h4 className='text-center border-b-2 border-black text-xl font-bold break-all lg:border-t-2 lg:border-x-0'>TOTAL PRICE</h4>
-                        </div>
-                        <div className='text-xl font-bold my-12 mx-auto  border-black w-[30px] text-center'>
-                            {cartproduct.total_price}
+                        <div className='border-x-2 lg:border-l-0 border-b-2 border-black'>
+                            <div>
+                                <h4 className='text-center border-b-2 border-black text-xl font-bold break-all border-t-2 lg:border-x-0'>TOTAL PRICE</h4>
+                            </div>
+                            <div className='text-xl font-bold my-12 mx-auto  border-black w-[30px] text-center'>
+                                {cartproduct.total_price}
+                            </div>
                         </div>
                     </div>
                 </div>
-                
 
             </div>
+
         </div>
     )
 }

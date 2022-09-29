@@ -10,7 +10,7 @@ export default function Kart(props) {
 	const { user } = useContext(Context)
 	const router = useRouter()
 	const KartProduct = useQuery(['KartProducts'], () => {
-		return fetchKartProducts(props.access)
+		return fetchKartProducts(props.cookies.access)
 	})
 
 	return (
@@ -23,7 +23,7 @@ export default function Kart(props) {
 						<div key={product.id}>
 
 							<CartItem cartproduct={product} id={product.product}
-								title={product.product_title} access={props.access} />
+								title={product.product_title} access={props.cookies.access} />
 
 						</div>
 					)
@@ -63,7 +63,7 @@ export const getServerSideProps = async ({ req, res, params }) => {
 	return {
 		props: {
 			dehydratedState: dehydrate(queryClient),
-			access: req.cookies.access
+			cookies: req.cookies
 		}
 	}
 }
