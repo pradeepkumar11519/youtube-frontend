@@ -9,15 +9,9 @@ export default function Choices({Product}) {
     
   return (
     <div className='mx-auto flex justify-center'>
-      <select onChange={(e)=>{
-        if(e.target.value==="ALL"){
-          setAllProducts(Product.data)
-          return
-        }
-        setAllProducts(Product?.data?.filter((product,i)=> product.category === e.target.value ))
-      }} className='border-2 border-black rounded-md font-bold text-2xl w-fit p-2 my-20' >
+      <select  className='border-2 border-black rounded-md font-bold text-2xl w-fit p-2 my-20' >
         <option className='font-medium text-xl'>ALL</option>
-        <option className='font-medium text-xl'>UNISEX HALF SLEEVE T-SHIRTS </option>
+        {/* <option className='font-medium text-xl'>UNISEX HALF SLEEVE T-SHIRTS </option>
         <option className='font-medium text-xl'>WOMEN HALF SLEEVE T-SHIRT</option>
         <option className='font-medium text-xl'>FULL SLEEVE T-SHIRT</option>
         <option className='font-medium text-xl'>WOMEN FULL SLEEVE T-SHIRT</option>
@@ -28,7 +22,7 @@ export default function Choices({Product}) {
         <option className='font-medium text-xl'>KIDS HALF SLEEEVE T-SHIRT</option>
         <option className='font-medium text-xl'>KIDS HALF SLEEEVE T-SHIRT</option>
         <option className='font-medium text-xl'>JOGGERS</option>
-        <option className='font-medium text-xl'>THROW PILLOW</option>
+        <option className='font-medium text-xl'>THROW PILLOW</option> */}
       </select>
     </div>
   )

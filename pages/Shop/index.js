@@ -22,7 +22,6 @@ export default function Shop(props) {
 	const Product = useQuery(['AllProducts'],()=>{
 		return fetchAllProducts(FilterQuery)
 	},{
-		refetchOnWindowFocus:false,
 		onSuccess:()=>{
 			setAllProducts(Product.data)
 		},
