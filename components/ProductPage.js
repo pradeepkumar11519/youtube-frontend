@@ -11,9 +11,7 @@ export default function ProductPage({Product}) {
 	if(Product.isLoading){
 		return <h1 className='mx-auto flex justify-center my-24 text-3xl font-bold'>Loading...</h1>
 	}
-	if(!Product){
-		return <h1 className='mx-auto flex justify-center my-24 text-3xl font-bold'>No Products Yet Available To Be Displayed</h1>
-	}
+	
 	if(Product.isError){
 		return <h1 className='mx-auto flex justify-center my-24 text-3xl font-bold'>{Product.error.message}</h1>
 	}
@@ -21,9 +19,7 @@ export default function ProductPage({Product}) {
 	if(Product.isLoading){
 		return <h1 className='mx-auto flex justify-center my-24 text-3xl font-bold'>Loading...</h1>
 	}
-	if(AllProducts.length===0){
-		return <h1 className='mx-auto flex justify-center my-24 text-3xl font-bold'>No Products Yet Available To Be Displayed</h1>
-	}
+	
 	return (
 		<div className='w-screen'>
 

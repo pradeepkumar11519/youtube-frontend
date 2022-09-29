@@ -20,7 +20,7 @@ import Choices from '../../components/Choices'
 export default function Shop(props) {
 	const {AllProducts,setAllProducts,FilterQuery} = useContext(Context)
 	const Product = useQuery(['AllProducts'],()=>{
-		return fetchAllProducts(FilterQuery)
+		return fetchAllProducts()
 	},{
 		onSuccess:()=>{
 			setAllProducts(Product.data)
@@ -86,7 +86,7 @@ const fetchAllProducts = async (query) =>{
 export const getServerSideProps = async ({req,res,params}) =>{
 	const queryClient = new QueryClient()
 	await queryClient.prefetchQuery(['AllProducts'],()=>{
-		return fetchAllProducts(typeof window!=='undefined'?localStorage.getItem('FilterQuery'):null)
+		return fetchAllProducts()
 	})
 	
 	return {
