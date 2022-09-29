@@ -81,6 +81,7 @@ export default function CheckoutSignleOrder(props) {
 
                 toast.success('Order SuccesFully Placed')
             }).catch((error) => {
+                console.log(error)
                 toast.error('Order Unsuccesfull,Amount Will Be Refunded Soon')
             })
         },
