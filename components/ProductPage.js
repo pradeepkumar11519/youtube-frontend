@@ -24,7 +24,7 @@ export default function ProductPage({Product}) {
 		<div className='w-screen'>
 
 			<div className='mx-20 md:grid grid-cols-4'>
-			{AllProducts?.map((product)=>{
+			{Product.data?.map((product)=>{
 				return (
 					<Products key={product.id} product={product} />
 				)
